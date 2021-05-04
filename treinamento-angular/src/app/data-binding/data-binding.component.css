@@ -8,6 +8,13 @@
     border-width: 2px; 
 }
 
+#meClique{
+    text-align: center;
+}
+
+.images{
+    text-align: center;
+}
 
 h3{
     text-align: center;
@@ -27,8 +34,8 @@ hr{
     text-transform: uppercase;
 }
 
-#meClique{
-    text-align: center;
+.multiplicador{
+    padding-left: 10%;
 }
 
 app-input-property{

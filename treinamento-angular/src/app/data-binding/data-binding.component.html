@@ -4,7 +4,9 @@
         <p>Nome chamado através da interpolação: {{ name }}</p>
         <h3>Property Binding</h3>
         <p>Imagem atraves do property binding:</p>
-        <img [src]="urlImg">
+        <div class="images">
+            <img [src]="urlImg">
+        </div>
     </div>
     <div class="col">
         <h3>Class e Style Binding</h3>
@@ -53,6 +55,8 @@
     </div>
     <div class="col" id="lastDiv">
         <h3>Output</h3>
-        <app-output-property [valor]="novoValor" (valorAlterado)="onValorAlterado($event)"></app-output-property>
+        <div class="multiplicador">  
+            <app-output-property [valor]="novoValor" (valorAlterado)="onValorAlterado($event)"></app-output-property>
+        </div>
     </div>
 </div>

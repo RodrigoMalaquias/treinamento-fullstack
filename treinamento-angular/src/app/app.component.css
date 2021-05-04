@@ -6,3 +6,12 @@ a{
     color: white;
 }
 
+.rodape{
+    background-color: black;
+    color: white;
+}
+
+svg{
+    margin: 5px;
+    padding-bottom: 2px;
+}

@@ -1,0 +1,42 @@
+.row{
+    margin-top: 10px;
+}
+
+.col{
+    padding: 10px;
+    border-right: solid;
+    border-width: 2px;
+}
+
+.buttonContent{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+#lastDiv{
+    border-right: none;
+}
+
+.continentes{
+    text-align: center;
+}
+
+.continentes a {
+    margin-left: 1rem;;
+}
+
+.escolhido{
+    background-color: yellow;
+}
+
+hr{
+    background-color: grey;
+}
+
+.icons{
+    text-align: center;
+}
+

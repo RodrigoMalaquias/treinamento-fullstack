@@ -1,0 +1,22 @@
+<p fundoVermelho>
+    Texto com fundo vermelho!
+</p>
+
+<p highLightMouse>
+    Texto com efeito ao passar o mouse!
+</p>
+
+<p highlight [defaultColor]="'grey'" [highlightColor]="'blue'">
+    Texto com efeitos de cores customizadas!
+</p>
+
+<div class="buttonContent">
+<div *ngIf="mostrarCurso">
+    <p>Lista de cursos!</p>
+</div>
+<div *ngElse="mostrarCurso">
+    <p>Não há nenhum curso na lista!</p>
+</div>
+
+    <button (click)="onMostrarCursos()" class="btn btn-primary">Mostrar cursos!</button>
+</div>

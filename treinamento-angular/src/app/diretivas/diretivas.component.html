@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col">
+        <h3>ngIf</h3>
+        <div *ngIf="existeTimes">
+            <p>Lista de times!</p>
+        </div>
+        <div *ngIf="!existeTimes">
+            <p>Não há nenhum time na lista!</p>
+        </div>
+        <div class="buttonContent">
+            <button (click)="imprimirTimes()" class="btn btn-primary">Mostrar times!</button>
+        </div>
+    </div>
+    <div class="col">
+        <h3>ngSwitchCase</h3>
+
+        <div class="continentes">
+            <span>Clique => </span>
+            <a (click)="regiao = 'europa'">Europa</a>
+            <a (click)="regiao = 'america'">América</a>
+            <a (click)="regiao = 'asia'">Ásia</a>
+        </div>
+        <div [ngSwitch]="regiao">
+            <p [class.escolhido]="regiao == 'america' ">Boca Juniors</p>
+            <p *ngSwitchCase="'america'">Time da América escolhido!</p>
+            <p [class.escolhido]="regiao == 'europa' ">Real Madrid</p>
+            <p *ngSwitchCase="'europa'">Time da Europa escolhido!</p>
+            <p [class.escolhido]="regiao == 'asia' ">F.C. Tokyo</p>
+            <p *ngSwitchCase="'asia'">Time da Ásia escolhido!</p>
+
+            <p *ngSwitchDefault>Nenhum continente escolhido!</p>
+        </div>
+    </div>
+    <div class="col">
+        <h3>ngFor</h3>
+        <div>
+            <ul>
+                <li *ngFor="let linguagem of linguagens, let i = index">
+                    {{ i + 1 }}º {{ linguagem }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col icons">
+        <h3>ngClass</h3>
+        <button class="btn" [ngClass]="{
+        'btn-success' : !verificado,
+        'btn-danger' : verificado
+       }" (click)="verificacao()">Danger/Success</button>
+    </div>
+    <div class="col">
+        <h3>ngStyle</h3>
+        <div class="buttonContent">
+        <button class="btn btn-primary"
+         [ngStyle]="{
+            'backgroundColor': (troca ? 'red' : 'green'),
+            'color': (troca ? 'white' : 'black')
+        }"
+         (click)="realizarTroca()"
+        >
+        Alterar Estilo!    
+        </button>
+        </div>
+        
+    </div>
+    <div class="col">
+        <h3>ngContent</h3>
+        <app-ng-content>
+            <div class="title">
+                Título capturado
+            </div>
+            <div class="content">
+                Conteúdo capturado
+            </div>
+        </app-ng-content>
+    </div>
+</div>
+<hr>
+<div>
+    <h3>Diretiva Personalizada</h3>
+    <div >
+        <app-diretivas-personalizadas></app-diretivas-personalizadas>
+    </div>
+</div>

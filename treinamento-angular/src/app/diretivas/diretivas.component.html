@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col">
+    <div class="col-md-4">
         <h3>ngIf</h3>
         <div *ngIf="existeTimes">
             <p>Lista de times!</p>
@@ -11,7 +11,7 @@
             <button (click)="imprimirTimes()" class="btn btn-primary">Mostrar times!</button>
         </div>
     </div>
-    <div class="col">
+    <div class="col-md-4">
         <h3>ngSwitchCase</h3>
 
         <div class="continentes">
@@ -31,7 +31,7 @@
             <p *ngSwitchDefault>Nenhum continente escolhido!</p>
         </div>
     </div>
-    <div class="col">
+    <div class="col-md-4">
         <h3>ngFor</h3>
         <div>
             <ul>
@@ -45,29 +45,26 @@
 <hr>
 
 <div class="row">
-    <div class="col icons">
+    <div class="col-md-4 icons">
         <h3>ngClass</h3>
         <button class="btn" [ngClass]="{
         'btn-success' : !verificado,
         'btn-danger' : verificado
-       }" (click)="verificacao()">Danger/Success</button>
+       }" (click)="verificacao()">Alterar Classe</button>
     </div>
-    <div class="col">
+    <div class="col-md-4">
         <h3>ngStyle</h3>
         <div class="buttonContent">
-        <button class="btn btn-primary"
-         [ngStyle]="{
+            <button class="btn btn-primary" [ngStyle]="{
             'backgroundColor': (troca ? 'red' : 'green'),
             'color': (troca ? 'white' : 'black')
-        }"
-         (click)="realizarTroca()"
-        >
-        Alterar Estilo!    
-        </button>
+        }" (click)="realizarTroca()">
+                Alterar Estilo!
+            </button>
         </div>
-        
+
     </div>
-    <div class="col">
+    <div class="col-md-4">
         <h3>ngContent</h3>
         <app-ng-content>
             <div class="title">
@@ -82,7 +79,7 @@
 <hr>
 <div>
     <h3>Diretiva Personalizada</h3>
-    <div >
+    <div>
         <app-diretivas-personalizadas></app-diretivas-personalizadas>
     </div>
 </div>

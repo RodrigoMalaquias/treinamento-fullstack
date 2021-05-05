@@ -1,14 +1,14 @@
 <div class="row">
-    <div class="col">
+    <div class="col-md-4">
         <h3>Interpolação</h3>
         <p>Nome chamado através da interpolação: {{ name }}</p>
         <h3>Property Binding</h3>
         <p>Imagem atraves do property binding:</p>
         <div class="images">
-            <img [src]="urlImg">
+            <img class="img-fluid" [src]="urlImg">
         </div>
     </div>
-    <div class="col">
+    <div class="col-md-4">
         <h3>Class e Style Binding</h3>
         <select #classe (change)="0" class="mb-3" style="width: 100%;">
             <option value="alert-success">Ok!</option>
@@ -25,7 +25,7 @@
             [style.display]="classe.value == 'alert-danger' ? 'block' : 'none' "> Only error!</div>
     </div>
 
-    <div class="col">
+    <div class="col-md-4" id="lastDiv">
         <h3>Event binding</h3>
         <div id="meClique"> 
             <button  (click)="meClique()" class="btn btn-primary">Clique!</button>
@@ -41,7 +41,7 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col">
+    <div class="col-sm-4">
         <h3>Two way data binding</h3>
         <p>{{ person.pais }} fica no continente -> {{ person.continente }}</p>
         <input p-20 type="text" [(ngModel)]="person.pais">
@@ -49,11 +49,11 @@
         <input type="text" [(ngModel)]="person.continente">
 
     </div>
-    <div class="col">
+    <div class="col-sm-4">
         <h3>Input</h3>
         <app-input-property [processador]="nomeDoProcessador"></app-input-property>
     </div>
-    <div class="col" id="lastDiv">
+    <div class="col-sm-4">
         <h3>Output</h3>
         <div class="multiplicador">  
             <app-output-property [valor]="novoValor" (valorAlterado)="onValorAlterado($event)"></app-output-property>

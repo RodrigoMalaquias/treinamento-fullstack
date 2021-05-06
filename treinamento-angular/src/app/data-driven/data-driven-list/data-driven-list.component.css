@@ -1,0 +1,17 @@
+h4{
+    color: white;
+    padding-top: 4px;
+    padding-left: 5px;
+}
+
+img{
+    height: 3rem;
+}
+
+.card-header{
+    background-color: green;
+}
+
+.pokebola{
+    padding-right: 13%;
+}

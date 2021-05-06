@@ -1,0 +1,55 @@
+<div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="">
+      </div>
+      <div class="float-right">
+        <button routerLink="/data-driven" type="button" class="btn btn-success">Novo Pokemon</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Pokemon</th>
+            <th>Tipo</th>
+            <div class="float-right pokebola">
+              <img src="https://image.flaticon.com/icons/png/128/743/743977.png" alt="">
+            </div>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pokemon of pokemons">
+            <td>{{ pokemon.id }}</td>
+            <td>{{ pokemon.nome }}</td>
+            <td>{{ pokemon.tipo }}</td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-warning mb-1 btn-sm">
+                  Atualizar
+                </button>
+  
+                <button class="btn btn-outline-danger mb-1 btn-sm">
+                  Remover
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <ng-template #loading>
+        <span>Carregando Cursos...</span>
+      </ng-template>
+  
+      <!--ng-template #loadingError>
+        <div *ngIf="error$ | async; else loading" >
+          Erro ao carregar cursos. Tente novamente mais tarde.
+        </div>
+        <ng-template #loading>
+            <span>Carregando Cursos...</span>
+        </ng-template>
+      </ng-template -->
+    </div>
+  </div>

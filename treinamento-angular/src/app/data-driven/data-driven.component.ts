@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PokedexService } from '../shared/services/pokedex.service';
 
 @Component({
   selector: 'app-data-driven',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataDrivenComponent implements OnInit {
 
-  constructor() { }
+  pokemonForm: FormGroup;
+
+
+  resetar(){
+    this.pokemonForm.reset();
+  }
+
+  onSubmit(){
+    console.log(this.pokemonForm.value);
+    this.pokemonForm.reset();
+  }
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+
+    this.pokemonForm = this.formBuilder.group({
+      id: [null],
+      nome:[null,[Validators.required]],
+      tipo:[null,[Validators.required]]
+    });
+    console.log(this.pokemonForm);
   }
+
+
 
 }

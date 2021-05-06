@@ -1,0 +1,40 @@
+http://localhost:3000/pokemon
+
+###
+
+GET   http://localhost:3000/pokemon/2 HTTP/1.1
+
+
+###
+
+POST http://localhost:3000/pokemon HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome":"Pikachu",
+    "tipo":"Elétrico"
+}
+
+###
+
+POST http://localhost:3000/pokemon HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome":"s",
+    "tipo":"Elétrico"
+}
+
+###
+
+PUT http://localhost:3000/pokemon/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome":"s2",
+    "tipo":"Elétrico"
+}
+
+###
+
+DELETE  http://localhost:3000/pokemon/2 HTTP/1.1

@@ -1,1 +1,27 @@
-<p>data-driven works!</p>
+<h2>Cadastre seu pokemon!</h2>
+<form [formGroup]="pokemonForm">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="nome">Nome</label>
+                <input type="email" class="form-control" id="nome" formControlName="nome" aria-describedby="emailHelp" placeholder="Digite o nome aqui">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState">Tipo</label>
+                <select id="inputState" class="form-control" id="tipo" formControlName="tipo">
+                    <option selected>Normal</option>
+                    <option>Elétrico </option>
+                    <option>Inseto</option>
+                    <option>Aquático</option>
+                    <option>Fogo</option>
+                    <option>Voador</option>
+                    <option>Lendário</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="submit-cancel">
+        <button (click)="resetar()" class="btn btn-danger">Cancelar</button>
+        <button (click)="onSubmit()" type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>

@@ -1,0 +1,17 @@
+<div class="content">
+    <h2>Testando Pipes</h2>
+
+    <div class="row marcador align-items-center">
+        <div class="col mx-auto text-center">
+            <p>Nome: {{ pokemon.nome | uppercase}}</p>
+            <p>Elemento: {{ pokemon.elemento | lowercase }}</p>
+            <p>Raridade (1-5): {{ pokemon.raridade | number:'1.1-2'}}</p>
+            <p>Data Nascimento: {{ pokemon.nascimento | date: 'dd-MM-yyy' }}</p>
+            <img class="img-responsive" [src]="pokemon.foto">
+    </div>    
+</div>
+
+
+
+
+

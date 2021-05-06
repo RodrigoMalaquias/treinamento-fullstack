@@ -9,5 +9,11 @@ export class PokemonService {
     return ["Charmander","Charizard"];
   }
 
-  constructor() { }
+  addPokemon(pokemon : string){
+    return [pokemon];
+  }
+
+  constructor() {
+    console.log('PokemonService');
+  }
 }

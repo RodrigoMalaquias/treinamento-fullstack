@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'servicos',
     loadChildren:() => import("./servicos/servicos.module").then(m => m.ServicosModule)
+  },
+  {
+    path:'pipes',
+    loadChildren:() => import("./pipes/pipes.module").then(m => m.PipesModule)
+  },
+  {
+    path:'data-driven',
+    loadChildren:() => import("./data-driven/data-driven.module").then(m => m.DataDrivenModule)
   }
 ];
 

@@ -12,6 +12,18 @@ img{
     background-color: green;
 }
 
+.card-body{
+    text-align: center;
+}
+
 .pokebola{
     padding-right: 13%;
+}
+
+#loading{
+    justify-content: center;
+}
+
+.showError{
+    padding: 5rem;
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PokedexService } from '../shared/services/pokedex.service';
 
 @Component({
   selector: 'app-data-driven',

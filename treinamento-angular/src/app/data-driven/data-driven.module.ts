@@ -6,6 +6,7 @@ import { DataDrivenComponent } from './data-driven.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [DataDrivenComponent],
   imports: [
@@ -13,5 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     DataDrivenRoutingModule,
     ReactiveFormsModule,
   ],
+  providers: []
 })
 export class DataDrivenModule { }

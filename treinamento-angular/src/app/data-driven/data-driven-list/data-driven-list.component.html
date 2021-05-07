@@ -8,14 +8,14 @@
       </div>
     </div>
     <div class="card-body">
-      <table class="table table-hover">
+      <table class="table table-hover" *ngIf="pokemons$ | async as pokemons; else loadingError ">
         <thead>
           <tr>
             <th>N°</th>
             <th>Pokemon</th>
             <th>Tipo</th>
             <div class="float-right pokebola">
-              <img src="https://image.flaticon.com/icons/png/128/743/743977.png" alt="">
+              <img src="https://cdn.pixabay.com/photo/2016/08/20/12/56/pokemon-1607473_960_720.png" alt="">
             </div>
           </tr>
         </thead>
@@ -30,7 +30,7 @@
                   Atualizar
                 </button>
   
-                <button class="btn btn-outline-danger mb-1 btn-sm">
+                <button (click)="onDelete(pokemon)" class="btn btn-outline-danger mb-1 btn-sm">
                   Remover
                 </button>
               </span>
@@ -39,17 +39,18 @@
         </tbody>
       </table>
   
-      <ng-template #loading>
-        <span>Carregando Cursos...</span>
-      </ng-template>
+      <!-- <ng-template #loading>
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f321b49-5fa7-407b-aaa0-cca6992d3d7c/d5s04qj-d26a072a-3294-4da7-8ab9-a1be78141275.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi81ZjMyMWI0OS01ZmE3LTQwN2ItYWFhMC1jY2E2OTkyZDNkN2MvZDVzMDRxai1kMjZhMDcyYS0zMjk0LTRkYTctOGFiOS1hMWJlNzgxNDEyNzUuZ2lmIn1dXX0.hiDasOecg6-_ze0YZLGVbl4nKudKH9jPepKtZqUlS48" alt="">
+      </ng-template> -->
   
-      <!--ng-template #loadingError>
+      <ng-template #loadingError>
         <div *ngIf="error$ | async; else loading" >
-          Erro ao carregar cursos. Tente novamente mais tarde.
+          <img src="https://images.vexels.com/media/users/3/204841/isolated/preview/9f6da5f62450f86dca690d0ccc8a7f70-cor-plana-do-iacute-cone-da-lupa-by-vexels.png" alt="">
+          Erro ao carregar seus pokemons!
         </div>
         <ng-template #loading>
-            <span>Carregando Cursos...</span>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f321b49-5fa7-407b-aaa0-cca6992d3d7c/d5s04qj-d26a072a-3294-4da7-8ab9-a1be78141275.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi81ZjMyMWI0OS01ZmE3LTQwN2ItYWFhMC1jY2E2OTkyZDNkN2MvZDVzMDRxai1kMjZhMDcyYS0zMjk0LTRkYTctOGFiOS1hMWJlNzgxNDEyNzUuZ2lmIn1dXX0.hiDasOecg6-_ze0YZLGVbl4nKudKH9jPepKtZqUlS48" alt="">
         </ng-template>
-      </ng-template -->
+      </ng-template>
     </div>
   </div>

@@ -13,7 +13,8 @@
             </div>
             <div class="col-md-6">
                 <label for="inputState">Tipo</label>
-                <select id="inputState" class="form-control" id="tipo" formControlName="tipo">
+                <select id="inputState" class="form-control" id="tipo" formControlName="tipo" [ngClass]="{ 'is-invalid' : submitted && temErro('nome')}"
+                [ngClass]="{ 'is-valid' : !submitted && !temErro('nome')}">
                     <option selected>Normal</option>
                     <option>Elétrico </option>
                     <option>Inseto</option>
@@ -22,6 +23,9 @@
                     <option>Voador</option>
                     <option>Lendário</option>
                 </select>
+                <div class="invalid-feedback" *ngIf="temErro('nome') && temErro('tipo')['required']" >
+                    Por favor escolha o tipo do pokemon!
+                </div>
             </div>
         </div>
     </div>

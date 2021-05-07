@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DataDrivenListComponent } from './data-driven-list/data-driven-list.component';
 import { DataDrivenComponent } from './data-driven.component';
+import { DataResolverGuard } from './guards/data-resolver.guard';
 
 
 const routes: Routes = [{
@@ -10,11 +10,17 @@ const routes: Routes = [{
   },
   {
     path: "novo",
-    component: DataDrivenListComponent
+    component: DataDrivenComponent,
+    resolve: {
+      pokemon: DataResolverGuard
+    }
   },
   {
     path: "editar/:id",
-    component: DataDrivenListComponent
+    component: DataDrivenComponent,
+    resolve: {
+      pokemon: DataResolverGuard
+    }
   }
 
 ];

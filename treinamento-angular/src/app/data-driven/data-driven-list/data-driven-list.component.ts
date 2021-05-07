@@ -8,6 +8,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { catchError } from 'rxjs/operators';
 import { AlertModalComponent } from 'src/app/shared/alert-modal/alert-modal.component';
 import { AlertModalService } from 'src/app/shared/alert-modal.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -31,9 +32,15 @@ export class DataDrivenListComponent implements OnInit {
 
   
 
-  constructor(private service: DataDrivenService,private modalService: BsModalService, private alertService: AlertModalService) { }
+  constructor(private service: DataDrivenService,
+    private modalService: BsModalService, 
+    private alertService: AlertModalService,
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+
     // this.service.list().subscribe(
     //   dados => this.pokemons = dados
     // );
@@ -73,6 +80,10 @@ export class DataDrivenListComponent implements OnInit {
         return of();
       })
     );
+  }
+
+  onEdit(pokemonId){
+    this.router.navigateByUrl(`/data-driven/editar/${pokemonId}`);
   }
 
   ocorreErro(){

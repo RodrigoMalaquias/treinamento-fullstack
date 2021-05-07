@@ -24,12 +24,20 @@ export class DataDrivenService {
   }
   //tap com intuito de debugar  
 
+  loadById(id){
+    return this.http.get<pokemon>(`${this.API}/${id}`).pipe(take(1));
+  }
+
   remove(id){
     return this.http.delete(`${this.API}/${id}`).pipe(take(1));
   }
 
   create(pokemon) {
     return this.http.post(this.API, pokemon).pipe(take(1));
+  }
+
+  edit(pokemon){
+    return this.http.put(`${this.API}/${pokemon.id}`, pokemon).pipe(take(1));
   }
 
 }

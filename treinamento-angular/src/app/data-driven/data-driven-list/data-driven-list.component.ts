@@ -55,7 +55,7 @@ export class DataDrivenListComponent implements OnInit {
     this.service.remove(this.pokemonEscolhido.id).subscribe(
       seccess => {
         console.log("success");
-        alert(pokemon.nome)
+        this.alertService.mostrarMensagemInfo(this.pokemonEscolhido.nome+" removido com sucesso!")
         this.onRefresh();
       },
       error => {

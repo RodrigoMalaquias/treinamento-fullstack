@@ -1,10 +1,15 @@
-<h2>Cadastre seu pokemon!</h2>
+<h2>Cadastre seu Pokemon!</h2>
 <form [formGroup]="pokemonForm">
     <div class="form-group">
         <div class="row">
             <div class="col-md-6">
                 <label for="nome">Nome</label>
-                <input type="email" class="form-control" id="nome" formControlName="nome" aria-describedby="emailHelp" placeholder="Digite o nome aqui">
+                <input type="email" class="form-control" id="nome" formControlName="nome" aria-describedby="emailHelp"
+                    placeholder="Digite o nome aqui" [ngClass]="{ 'is-invalid' : submitted && temErro('nome')}"
+                    [ngClass]="{ 'is-valid' : !submitted && !temErro('nome')}">
+                    <div class="invalid-feedback" *ngIf="temErro('nome') && temErro('nome')['required']" >
+                        Por favor informe o nome do pokemon!
+                    </div>
             </div>
             <div class="col-md-6">
                 <label for="inputState">Tipo</label>
@@ -24,4 +29,4 @@
         <button (click)="resetar()" class="btn btn-danger">Cancelar</button>
         <button (click)="onSubmit()" type="submit" class="btn btn-primary">Enviar</button>
     </div>
-  </form>
+</form>

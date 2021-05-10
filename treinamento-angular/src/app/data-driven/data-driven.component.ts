@@ -43,7 +43,7 @@ export class DataDrivenComponent implements OnInit {
       switchMap(id => this.formService.loadById(id))
       ).subscribe
     (
-      aluno => this.updateForm(aluno));
+      pokemon => this.updateForm(pokemon));
     }
 
     const pokemon = this.route.snapshot.data['pokemon']

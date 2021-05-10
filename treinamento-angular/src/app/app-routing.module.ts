@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path:'data-driven-list',
     loadChildren:() => import("./data-driven/data-driven-list/data-driven-list.module").then(m => m.DataDrivenListModule)
+  },
+  {
+    path: 'template-driven',
+    loadChildren:() => import("./template-driven/template-driven.module").then(m => m.TemplateDrivenModule)
+  },
+  {
+    path: 'template-driven-list',
+    loadChildren:() => import("./template-driven/template-driven-list/template-driven-list.module").then(m => m.TemplateDrivenListModule)
   }
 ];
 

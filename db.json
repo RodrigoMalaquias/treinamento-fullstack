@@ -6,9 +6,14 @@
       "id": 1
     },
     {
-      "id": 2,
       "nome": "Charizard",
-      "tipo": "Fogo"
+      "tipo": "Fogo",
+      "id": 2
+    },
+    {
+      "nome": "teste",
+      "tipo": "Normal",
+      "id": 3
     }
   ]
 }

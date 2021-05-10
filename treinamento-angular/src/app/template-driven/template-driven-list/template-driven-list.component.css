@@ -1,0 +1,29 @@
+h4{
+    color: white;
+    padding-top: 4px;
+    padding-left: 5px;
+}
+
+img{
+    height: 3rem;
+}
+
+.card-header{
+    background-color: green;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.pokebola{
+    padding-right: 13%;
+}
+
+#loading{
+    justify-content: center;
+}
+
+.showError{
+    padding: 5rem;
+}

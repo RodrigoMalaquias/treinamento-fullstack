@@ -1,0 +1,19 @@
+h2{
+    text-align: center;
+}
+
+.submit-cancel{
+    text-align: center;
+}
+
+button{
+    margin: 5px;
+}
+
+.ng-touched.ng-invalid:not(form){
+    border: 1px solid red;
+}
+
+.msgValidacao{
+    color: red;
+}

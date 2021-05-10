@@ -6,14 +6,9 @@
       "id": 1
     },
     {
-      "nome": "Charizar",
-      "tipo": "Fogo",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "nome": "adsasda",
-      "tipo": "Elétrico"
+      "id": 2,
+      "nome": "Charizard",
+      "tipo": "Fogo"
     }
   ]
 }

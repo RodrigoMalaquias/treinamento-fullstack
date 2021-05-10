@@ -32,12 +32,19 @@ export class DataDrivenService {
     return this.http.delete(`${this.API}/${id}`).pipe(take(1));
   }
 
-  create(pokemon) {
+  private create(pokemon) {
     return this.http.post(this.API, pokemon).pipe(take(1));
   }
 
-  edit(pokemon){
+  private edit(pokemon){
     return this.http.put(`${this.API}/${pokemon.id}`, pokemon).pipe(take(1));
+  }
+
+  save(pokemon){
+    if(pokemon.id){
+      return this.edit(pokemon);
+    }
+    return this.create(pokemon);
   }
 
 }

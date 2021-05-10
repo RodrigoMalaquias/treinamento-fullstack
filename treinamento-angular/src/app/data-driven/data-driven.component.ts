@@ -69,7 +69,37 @@ export class DataDrivenComponent implements OnInit {
     this.submitted = true;
     if (this.pokemonForm.valid) {
       console.log(this.pokemonForm.value);
-      this.formService
+
+      let msgSucess = "Pokemon " + this.pokemonForm.value.nome + " criado com sucesso!";
+      let msgError = "Erro ao criar pokemon!";
+      if(this.pokemonForm.value.id){
+        msgSucess = "Pokemon " + this.pokemonForm.value.nome + " atualizado com sucesso!";
+        msgError = "Erro ao atualizar pokemon!";
+      }
+
+      this.formService.save(this.pokemonForm.value).subscribe(
+        (success) => {
+          this.modal.mostrarMensagemSucesso(msgSucess);
+          this.location.back();
+        },
+        (error) => this.modal.mostrarMensagemError(msgError)
+      );
+
+      
+      /*
+      if(this.pokemonForm.value.id){
+        this.formService.edit(this.pokemonForm.value).subscribe(
+          (success) => {
+            this.modal.mostrarMensagemSucesso(
+              "Pokemon " + this.pokemonForm.value.nome + " atualizado com sucesso!"
+            );
+            this.location.back();
+          },
+          (error) => this.modal.mostrarMensagemError("Erro ao atualizar pokemon!")
+        );
+      }
+      else{
+        this.formService
         .create(this.pokemonForm.value) // Metodos http retornam observable, por isso o subscribe.
         .subscribe(
           (success) => {
@@ -82,6 +112,8 @@ export class DataDrivenComponent implements OnInit {
         );
 
       //this.router.navigate(['/data-driven-list']);
+      }
+      */
     }
   }
 

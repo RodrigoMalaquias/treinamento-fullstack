@@ -6,6 +6,7 @@ import { DataDrivenService } from "./data-driven.service";
 import { Location } from "@angular/common";
 import { ActivatedRoute, Router } from "@angular/router";
 import { map, switchMap } from "rxjs/operators";
+import { pokeApiService } from "../shared/pokeApi.service";
 
 @Component({
   selector: "app-data-driven",
@@ -15,6 +16,7 @@ import { map, switchMap } from "rxjs/operators";
 export class DataDrivenComponent implements OnInit {
   pokemonForm: FormGroup;
   submitted = false;
+  teste : any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,11 +24,13 @@ export class DataDrivenComponent implements OnInit {
     private location: Location,
     private modal: AlertModalService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private pokeApiService: pokeApiService,
   ) {}
 
   ngOnInit(): void {
 
+    console.log("oi");
     //Após usar o resolver guard
     // this.route.params
     // .pipe(
@@ -35,6 +39,14 @@ export class DataDrivenComponent implements OnInit {
     // )
     // .subscribe(pokemon => this.updateForm(pokemon));
 
+    this.pokeApiService.consultaPokemons().subscribe(
+      (dados) => {
+        this.teste = dados
+      }
+    );
+      
+  
+    
 
   if(this.router.url != "/data-driven"){
     console.log("oi");
@@ -116,6 +128,8 @@ export class DataDrivenComponent implements OnInit {
       */
     }
   }
+
+  
 
   resetar() {
     this.submitted = false;

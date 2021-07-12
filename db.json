@@ -11,9 +11,14 @@
       "id": 2
     },
     {
-      "nome": "teste",
-      "tipo": "Normal",
-      "id": 3
+      "id": 3,
+      "nome": "teste2",
+      "tipo": "Normal"
+    },
+    {
+      "id": 4,
+      "nome": "Xixa",
+      "tipo": "poison"
     }
   ]
 }

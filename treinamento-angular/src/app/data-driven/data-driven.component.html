@@ -15,13 +15,7 @@
                 <label for="inputState">Tipo</label>
                 <select id="inputState" class="form-control" id="tipo" formControlName="tipo" [ngClass]="{ 'is-invalid' : submitted && temErro('nome')}"
                 [ngClass]="{ 'is-valid' : !submitted && !temErro('nome')}">
-                    <option selected>Normal</option>
-                    <option>Elétrico </option>
-                    <option>Inseto</option>
-                    <option>Aquático</option>
-                    <option>Fogo</option>
-                    <option>Voador</option>
-                    <option>Lendário</option>
+                    <option *ngFor="let types of teste.results">{{ types.name | uppercase}}</option>
                 </select>
                 <div class="invalid-feedback" *ngIf="temErro('nome') && temErro('tipo')['required']" >
                     Por favor escolha o tipo do pokemon!
@@ -29,6 +23,7 @@
             </div>
         </div>
     </div>
+
     <div class="submit-cancel">
         <button (click)="resetar()" class="btn btn-danger">Cancelar</button>
         <button (click)="onSubmit()" type="submit" class="btn btn-primary">Enviar</button>

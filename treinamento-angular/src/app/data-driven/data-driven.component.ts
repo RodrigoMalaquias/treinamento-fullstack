@@ -16,7 +16,7 @@ import { pokeApiService } from "../shared/pokeApi.service";
 export class DataDrivenComponent implements OnInit {
   pokemonForm: FormGroup;
   submitted = false;
-  teste : any;
+  teste = undefined;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,23 +30,11 @@ export class DataDrivenComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("oi");
-    //Após usar o resolver guard
-    // this.route.params
-    // .pipe(
-    //   map((params: any) => params['id']),
-    //   switchMap(id => this.formService.loadById(id))
-    // )
-    // .subscribe(pokemon => this.updateForm(pokemon));
-
     this.pokeApiService.consultaPokemons().subscribe(
       (dados) => {
         this.teste = dados
       }
     );
-      
-  
-    
 
   if(this.router.url != "/data-driven"){
     console.log("oi");
@@ -67,6 +55,7 @@ export class DataDrivenComponent implements OnInit {
     });
     console.log("Abaixo");
     console.log(this.pokemonForm.value.id);
+    
   }
 
   updateForm(pokemon){

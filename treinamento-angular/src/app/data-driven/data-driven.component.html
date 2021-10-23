@@ -15,7 +15,7 @@
                 <label for="inputState">Tipo</label>
                 <select id="inputState" class="form-control" id="tipo" formControlName="tipo" [ngClass]="{ 'is-invalid' : submitted && temErro('nome')}"
                 [ngClass]="{ 'is-valid' : !submitted && !temErro('nome')}">
-                    <option *ngFor="let types of teste.results">{{ types.name | uppercase}}</option>
+                    <option *ngFor="let types of teste?.results">{{ types.name | uppercase}}</option>
                 </select>
                 <div class="invalid-feedback" *ngIf="temErro('nome') && temErro('tipo')['required']" >
                     Por favor escolha o tipo do pokemon!
